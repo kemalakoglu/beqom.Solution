@@ -1,5 +1,5 @@
-## Core.Infrastructure
-Core.Infrastructure .Net Core 3.x support !
+## beqom.Solution
+Core.Infrastructure .Net 6.x support !
 
 ## IoC
 ASP.NET Core Dependency 
@@ -8,19 +8,8 @@ ASP.NET Core Dependency
 SOLID <br/>
 Domain Driven Design
 
-## Persistance
-EntityFramework Core<br/>
-Dapper<br/>
-
 ## Object Mappers
 AutoMapper
-
-## Cache
-In-Memory
-Redis
-
-## Object Validation
-FluentValidation
 
 ## Log
 Serilog support
@@ -33,19 +22,14 @@ Swagger
 ## CQRS
 Mediatr
 
-## Query Language
-GraphQL
-
 ## Benefits
  - Conventional Dependency Registering
  - Async await first 
- - Multi Tenancy
  - GlobalQuery Filtering
  - Domain Driven Design Concepts
  - Repository and UnitofWork pattern implementations
  - Object to object mapping with abstraction
- - Net Core 2.x support
- - Auto object validation support
+ - Net 6.x support
  - Aspect Oriented Programming
  - Simple Usage
  - Modularity
@@ -61,29 +45,11 @@ GraphQL
                 .UseIISIntegration()
                 .UseStartup<Startup>();
                          
-***MultiTenancy Activation***
-
-    var connectionString = config["mysqlconnection:connectionString"];
-            services.AddDbContext<ACv2Context>(o => o.UseSqlServer(connectionString));
 ***Conventional Registration***	 	
 
       services.AddScoped<IUserStoreService, UserStoreService>();
                              ...
                          })
-
-***FluentValidators Activation***
-
-     services.ConfigureFluentValidation();
-
-     public static void ConfigureFluentValidation(this IServiceCollection services)
-        {
-            //services.AddTransient<IValidator<IValidator<Domain.Context.Entities.Galley>>, GalleyValidatorValidator>();
-            services.AddTransient<IValidator<RefType>, RefTypeValidator>();
-            services.AddTransient<IValidator<RefType>, RefTypeValidator>();
-                RuleFor(t => t.Name).NotEmpty().MinimumLength(3);
-                ...
-            }
-        }
 
   
 ***AutoMapper Activation***
@@ -201,55 +167,6 @@ GraphQL
             context.Response.StatusCode = (int) code;
             return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
         }
-
-***AggregateRoot definitions***
-
-   public interface IRepository<T> where T : class
-    {
-        /// <summary>
-        ///     UserManager
-        /// </summary>
-        UserManager<IdentityUser<string>> UserManager { get; set; }
-
-        /// <summary>
-        ///     RoleManager
-        /// </summary>
-        RoleManager<IdentityUserRole<string>> RoleManager { get; set; }
-
-        IEnumerable<T> FindAll();
-        IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression);
-        void Create(T entity);
-        void Update(T entity);
-        void Delete(T entity);
-        void DeleteBulk(IEnumerable<T> entity);
-        void InsertBulk(IEnumerable<T> entity);
-        void UpdateBulk(IEnumerable<T> entity);
-        void Save();
-        T GetByKey(int key);
-        T GetByKey(string key);
-        T GetByKey(object key);
-        /// <summary>
-        /// Query Method
-        /// </summary>
-        /// <returns>RepositoryQueryHelper (Sorgu Yardımcı Sınıfı)</returns>
-        IRepositoryQueryHelper<T> Query();
-
-        /// <summary>
-        /// To Set Data to Table, Definition Some Helper Parameters
-        /// </summary>
-        /// <param name="filter"></param>
-        /// <param name="orderBy"></param>
-        /// <param name="includeProperties"></param>
-        /// <param name="page"></param>
-        /// <param name="pageSize"></param>
-        /// <returns></returns>
-        IQueryable<T> Get(
-            Expression<Func<T, bool>> filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-            List<Expression<Func<T, object>>> includeProperties = null,
-            int? page = null,
-            int? pageSize = null);
-    }
 	
 	
         
@@ -332,74 +249,6 @@ GraphQL
         /// </summary>
         /// <returns>Data List</returns>
         T GetFirst();
-		
-		
-
-***Dapper Repository definitions***
- 
-
-  public class RefTypeDapperRepository : IDeliveryPlanDetailDapperRepository
-    {
-        private static string cnString =
-            "Data Source = 10.22.0.201; Initial Catalog = ACv2; Persist Security Info=True;User ID = usr_webapp; Password=passw0rd;";
-			...
-			
-			 public IEnumerable<DeliveryPlanDetail> GetRefType(GetDeliveriyPlanDetailRequestDTO request)
-        {
-            IEnumerable<DeliveryPlanDetail> entities = new List<DeliveryPlanDetail>();
-            using (IDbConnection con = new SqlConnection(cnString))
-            {
-                if (con.State == ConnectionState.Closed)
-                    con.Open();
-
-                DynamicParameters parameters=new DynamicParameters();
-                parameters.Add("@id", request.Id);
-                parameters.Add("@insertDate",request.InsertDate);
-               
-
-                StringBuilder query= new StringBuilder();
-                query.Append("select * from RefType rt");
-                query.Append(" where");
-                query.Append(" rt.Id == @id)");
-                query.Append(" rt.InsertDate >= @insertDate ");
-
-                entities = con.Query<RefTYpe>(query.ToString(),parameters).ToList();
-            }
-
-            return entities;
-        }
-			}
-
-
-***EntityFrameworkCore definitions***
-   
-
-     public class Context : IdentityDbContext<IdentityUser>
-    {
-        public Context()
-        {
-        }
-
-        public Context(DbContextOptions<Context> options)
-            : base(options)
-        {
-        }
-
-        public virtual DbSet<RefType> RefType { get; set; }
-        public virtual DbSet<RefValue> RefValue { get; set; }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer(
-                    "Data Source=10.22.0.161;Initial Catalog=DOCO_TEST;Integrated Security=SSPI; Trusted_Connection=True;");
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-    }
      
 
 ***Log Service definitions***

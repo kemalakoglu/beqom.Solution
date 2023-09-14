@@ -10,21 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\01-Core\beqom.Core.Contract\beqom.Core.Contract.csproj" />
-    <ProjectReference Include="..\..\01-Core\beqom.Core.Helper\beqom.Core.Helper.csproj" />
-    <ProjectReference Include="..\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="MediatR">
       <HintPath>C:\Users\kemal.akoglu\.nuget\packages\mediatr\7.0.0\lib\netstandard2.0\MediatR.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Option\OptionServiceHandler.cs">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Compile>
   </ItemGroup>
 
 </Project>

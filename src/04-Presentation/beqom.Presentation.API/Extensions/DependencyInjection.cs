@@ -1,41 +1,29 @@
-﻿using beqom.Application.Contract.Services;
-using beqom.Application.Service;
-using beqom.Application.UnitOfWork;
-using beqom.Core.Contract;
-using beqom.Domain.Aggregate.RefTypeValue;
-using beqom.Domain.Context.Context;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using beqom.Application.CommandQuery;
+using beqom.Application.Contract.Services;
+using beqom.Domain.Contract.Interface;
+using beqom.Domain.Repository;
+using beqom.Domain.Repository.Handlers;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace beqom.Presentation.API.Extensions
 {
     public static class DependencyInjection
     {
-        public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration config)
+        public static void ConfigureMediatr(this IServiceCollection services)
         {
-            var connectionString = config["mysqlconnection:connectionString"];
-            services.AddDbContext<CoreContext>(o => o.UseSqlServer(connectionString));
-
-            //services.AddDefaultIdentity<IdentityUser>()
-            //    .AddEntityFrameworkStores<Context>()
-            //    .AddDefaultTokenProviders();
+            services.AddMediatR(typeof(OptionServiceHandler).GetTypeInfo().Assembly);
         }
 
-        public static void ConfigureUnitOfWork(this IServiceCollection services)
+        public static void ConfigureRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-        }
-
-        public static void ConfigureDomainService(this IServiceCollection services)
-        {
-
-            services.AddScoped<IOptionService, OptionService>();
+            services.AddScoped<IOptionRepository, OptionRepository>();
         }
 
         public static void ConfigureApplicationService(this IServiceCollection services)
         {
-            services.AddScoped<ICoreApplicationService, ApplicationService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using beqom.Domain.Context.Context;
 using beqom.Presentation.API.Extensions;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -24,51 +23,32 @@ namespace beqom.Presentation.API
             services.AddMvc().AddFluentValidation();
             services.ConfigureLogger(Configuration);
             services.ConfigureCors();
-            services.ConfigureSqlContext(Configuration);
-            services.ConfigureUnitOfWork();
             services.ConfigureSwagger();
-            //services.AddAutoMapper();
             services.AddAutoMapper(typeof(Startup));
             services.ConfigureApplicationService();
-            services.ConfigureDomainService();
-            services.ConfigureFluentValidation();
-            services.ConfigureRedisCache();
-            //Mapping.ConfigureMapping();
+            services.ConfigureMediatr();
+            services.ConfigureRepositories();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CoreContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
                 app.UseHsts();
 
-            // ===== Use Authentication ======
-            app.UseAuthentication();
+            app.UseRouting();
             app.UseHttpsRedirection();
             app.UseMiddleware(typeof(ErrorHandlingMiddleware));
-            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseStaticFiles();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/CoreInfrastructure/swagger.json", "CoreInfrastructure"); });
-            app.UseMvc(routes =>
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/beqom/swagger.json", "beqom"); });
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    "default",
-                    "api/{controller}/{action}");
-                //defaults: new { controller = "RefType" });
-                //routes.MapRoute(
-                //    name: "LogsId",
-                //    template: "api/[controller]/ID/{id}",
-                //    defaults: new { controller = "BXLogs", action = "GetById" });
-
-                //routes.MapRoute(
-                //    name: "LogsAPI",
-                //    template: "api/[controller]/API/{apiname}",
-                //    defaults: new { controller = "BXLogs", action = "GetByAPI" });
+                endpoints.MapControllerRoute("default", "api/{controller}/{action}");
             });
         }
     }

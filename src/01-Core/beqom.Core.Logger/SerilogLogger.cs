@@ -1,7 +1,7 @@
-﻿using System;
-using beqom.Core.Contract;
+﻿using beqom.Core.Contract;
 using Serilog;
 using Serilog.Events;
+using System;
 
 namespace beqom.Core.Logger
 {

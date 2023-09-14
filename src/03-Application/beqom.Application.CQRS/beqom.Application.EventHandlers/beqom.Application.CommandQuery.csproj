@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\01-Core\beqom.Core.Enumeration\beqom.Core.Enumeration.csproj" />
     <ProjectReference Include="..\..\..\02-Domain\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj" />
+    <ProjectReference Include="..\..\beqom.Application.Contract\beqom.Application.Contract.csproj" />
   </ItemGroup>
 
   <ItemGroup>

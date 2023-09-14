@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using beqom.Core.Resources;
+﻿using beqom.Core.Resources;
 using Serilog;
 using Serilog.Events;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace beqom.Core.Helper
 {
-    public class CreateAsyncResponse<T> where T:class
+    public class CreateAsyncResponse<T> where T : class
     {
         public static async Task<ResponseDTO<T>> Return(T entity, string methodName)
         {

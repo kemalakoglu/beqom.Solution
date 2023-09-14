@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace beqom.Presentation.API.Extensions
 {
@@ -11,7 +10,7 @@ namespace beqom.Presentation.API.Extensions
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("CoreInfrastructure", new OpenApiInfo
+                c.SwaggerDoc("beqom", new OpenApiInfo
                 {
                     Title = "beqom API",
                     Version = "beqom",

@@ -10,7 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\01-Core\beqom.Core.Enumeration\beqom.Core.Enumeration.csproj" />
+    <ProjectReference Include="..\..\..\01-Core\beqom.Core.Contract\beqom.Core.Contract.csproj" />
+    <ProjectReference Include="..\..\beqom.Domain.Aggregate\beqom.Domain.Aggregate.csproj" />
   </ItemGroup>
 
 </Project>

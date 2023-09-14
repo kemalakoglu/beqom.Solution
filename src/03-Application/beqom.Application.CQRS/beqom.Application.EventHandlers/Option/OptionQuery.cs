@@ -1,27 +1,16 @@
-﻿using System.Threading.Tasks;
-using beqom.Core.Enumeration;
+﻿using beqom.Core.Helper;
 using beqom.Domain.Contract.DTO.Option;
-using MediatR;
+using System.Threading.Tasks;
 
-namespace beqom.Application.EventHandlers.RefType
+namespace beqom.Application.CommandQuery
 {
-    public class OptionQuery
+    public partial class ApplicationService
     {
-        private readonly IMediator mediator;
-
-        public OptionQuery(IMediator mediator)
+        #region Option Aggregate
+        public async Task<OptionResponseDto> GetOption(OptionRequestDto request)
         {
-            this.mediator = mediator;
+            return await this.mediator.Send(request);
         }
-
-        public async Task<OptionResponseDto> GetOptionByDefault()
-        {
-            return await this.mediator.Send(new OptionRequestDto { option = Options.Default});
-        }
-
-        public async Task<OptionResponseDto> GetOption(OptionRequestDto requestDto)
-        {
-            return await this.mediator.Send(requestDto);
-        }
+        #endregion
     }
 }

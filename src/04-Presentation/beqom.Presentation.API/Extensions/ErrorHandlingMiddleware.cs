@@ -1,14 +1,14 @@
-﻿using System;
-using System.Net;
-using System.Net.Http;
-using System.Security.Authentication;
-using System.Threading.Tasks;
-using beqom.Core.Resources;
+﻿using beqom.Core.Resources;
 using beqom.Domain.Contract.DTO.Error;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Serilog;
 using Serilog.Events;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Security.Authentication;
+using System.Threading.Tasks;
 
 namespace beqom.Presentation.API.Extensions
 {
@@ -71,7 +71,7 @@ namespace beqom.Presentation.API.Extensions
             }
             else if (exception.GetType() == typeof(BusinessException))
             {
-                var businesException = (BusinessException) exception;
+                var businesException = (BusinessException)exception;
                 message = BusinessException.GetDescription(businesException.RC, businesException.param1);
                 code = HttpStatusCode.InternalServerError;
                 RC = businesException.RC;
@@ -89,7 +89,7 @@ namespace beqom.Presentation.API.Extensions
                 RC = RC
             };
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) code;
+            context.Response.StatusCode = (int)code;
             return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
         }
     }

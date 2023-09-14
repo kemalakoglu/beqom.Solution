@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace beqom.Domain.Aggregate.Base
 {
@@ -17,7 +15,5 @@ namespace beqom.Domain.Aggregate.Base
         public DateTime? UpdateDate { get; protected set; }
 
         public bool IsActive { get; protected set; }
-
-        //public abstract int getId();
     }
 }

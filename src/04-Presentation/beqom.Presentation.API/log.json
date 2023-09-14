@@ -940,17 +940,17 @@
 {"Timestamp":"2019-05-09T11:38:13.3372616+03:00","Level":"Information","MessageTemplate":"Service path is:/swagger/CoreInfrastructure/swagger.json","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:38:13.3471563+03:00","Level":"Information","MessageTemplate":"Service path is:/swagger/favicon-32x32.png","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:38:40.3781247+03:00","Level":"Information","MessageTemplate":"Service path is:/api/RefType/AddRefType","Properties":{"Application":"app"}}
-{"Timestamp":"2019-05-09T11:38:40.4724432+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.RefTypeValue.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
+{"Timestamp":"2019-05-09T11:38:40.4724432+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.Option.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:06.0236297+03:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:09.8600563+03:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:09.8600936+03:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:10.1958408+03:00","Level":"Information","MessageTemplate":"Service path is:/swagger/CoreInfrastructure/swagger.json","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:20.6401496+03:00","Level":"Information","MessageTemplate":"Service path is:/api/RefType/AddRefType","Properties":{"Application":"app"}}
-{"Timestamp":"2019-05-09T11:39:20.7947191+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.RefTypeValue.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
+{"Timestamp":"2019-05-09T11:39:20.7947191+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.Option.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:39:59.4281934+03:00","Level":"Information","MessageTemplate":"Service path is:/api/RefType/AddRefType","Properties":{"Application":"app"}}
-{"Timestamp":"2019-05-09T11:39:59.4537439+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.RefTypeValue.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
+{"Timestamp":"2019-05-09T11:39:59.4537439+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.Option.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
 {"Timestamp":"2019-05-09T11:40:40.9324577+03:00","Level":"Information","MessageTemplate":"Service path is:/api/RefType/AddRefType","Properties":{"Application":"app"}}
-{"Timestamp":"2019-05-09T11:40:40.9870845+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.RefTypeValue.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
+{"Timestamp":"2019-05-09T11:40:40.9870845+03:00","Level":"Error","MessageTemplate":"Unable to resolve service for type 'beqom.Domain.Aggregate.Option.IRefTypeService' while attempting to activate 'beqom.Application.Service.CoreApplicationService'.","Properties":{"Application":"app"}}
 {"Timestamp":"2019-09-23T16:22:57.0180544+03:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
 {"Timestamp":"2019-09-23T16:22:59.2071777+03:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
 {"Timestamp":"2019-09-23T16:22:59.2071776+03:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
@@ -976,3 +976,76 @@
 {"Timestamp":"2019-10-01T15:53:03.7106856+03:00","Level":"Information","MessageTemplate":"GetByParent İşlemi Başarıyla Gerçekleştirildi.","Properties":{"Application":"app"}}
 {"Timestamp":"2019-10-01T15:54:13.9631982+03:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
 {"Timestamp":"2019-10-01T15:54:14.8381750+03:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T14:59:00.6622493+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:00:47.0225457+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:07:01.9472248+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:10:34.9763749+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:12:09.9793406+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:14:23.3066398+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:14:51.5810436+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:14:53.0661620+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:00.3440478+02:00","Level":"Information","MessageTemplate":"Service path is:/api/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:06.3281528+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:06.3389110+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:06.9138174+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:06.9242077+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:06.9314663+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:07.2461731+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:07.3690416+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:07.6320520+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:15:07.6670817+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/favicon-32x32.png","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:18:56.6585956+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:18:58.2588652+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:06.9347461+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.0126719+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.3482068+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.3609465+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.3994486+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.7647007+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:07.9359102+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:19:08.1807520+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:17.8941871+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:19.8656025+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:31.4459219+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:31.5109264+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:31.7487679+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:31.7516762+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:31.7628508+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:32.1333827+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:32.2757830+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:32.7166103+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:20:46.9533284+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:22:41.8995098+02:00","Level":"Error","MessageTemplate":"The method or operation is not implemented.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:22:58.4705336+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:23:00.7284667+02:00","Level":"Error","MessageTemplate":"Value cannot be null. (Parameter 'request')","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:23:03.4180202+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:23:37.9413100+02:00","Level":"Error","MessageTemplate":"The method or operation is not implemented.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:36.7325872+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:38.9598686+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:47.9573330+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:47.9903176+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:48.2594152+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:48.2701779+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:48.2758791+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:48.7511990+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:48.9962638+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:24:49.2821521+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:25:02.6383728+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:25:36.1438268+02:00","Level":"Information","MessageTemplate":"GetOption Controller İşlemi Başarıyla Gerçekleştirildi.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:25:57.8883098+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:40.7513577+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:41.7254922+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:48.8205950+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:48.8647117+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.0463765+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.0489665+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.0642486+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.3047871+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.4487374+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:49.8904595+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:31:55.0875079+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:32:11.0817838+02:00","Level":"Information","MessageTemplate":"GetOption Controller İşlemi Başarıyla Gerçekleştirildi.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:32:27.0563605+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:32:44.0890126+02:00","Level":"Information","MessageTemplate":"GetOption Controller İşlemi Başarıyla Gerçekleştirildi.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:33:03.2529734+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-14T15:33:15.7018121+02:00","Level":"Information","MessageTemplate":"GetOption Controller İşlemi Başarıyla Gerçekleştirildi.","Properties":{"Application":"app"}}

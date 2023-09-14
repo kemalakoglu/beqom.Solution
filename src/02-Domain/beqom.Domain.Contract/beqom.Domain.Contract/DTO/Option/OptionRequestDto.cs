@@ -1,12 +1,7 @@
-﻿using beqom.Core.Enumeration;
-using beqom.Domain.Contract.DTO.Base;
+﻿using beqom.Domain.Aggregate.Option;
+using beqom.Domain.Contract.Enum.OptionType;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace beqom.Domain.Contract.DTO.Option
 {
@@ -14,6 +9,6 @@ namespace beqom.Domain.Contract.DTO.Option
     public class OptionRequestDto : IRequest<OptionResponseDto>
     {
         [DataMember]
-        public Options option { get; set; }
+        public OptionType option;
     }
 }
