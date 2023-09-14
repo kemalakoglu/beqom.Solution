@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\01-Core\beqom.Core.Contract\beqom.Core.Contract.csproj" />
+    <ProjectReference Include="..\..\02-Domain\beqom.Domain.Context\beqom.Domain.Context.csproj" />
+    <ProjectReference Include="..\..\02-Domain\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj" />
+  </ItemGroup>
+
+</Project>
