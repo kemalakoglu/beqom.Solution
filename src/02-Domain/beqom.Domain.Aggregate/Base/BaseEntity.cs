@@ -5,15 +5,12 @@ namespace beqom.Domain.Aggregate.Base
 {
     public abstract class BaseEntity
     {
-        [Key]
-        public long Id { get; protected set; }
+        public Guid Id { get; set; }
 
-        public bool Status { get; protected set; }
+        public string Name { get; set; }
 
-        public DateTime? InsertDate { get; protected set; }
+        public bool Status { get; set; }
 
-        public DateTime? UpdateDate { get; protected set; }
-
-        public bool IsActive { get; protected set; }
+        public bool IsActive { get; set; }
     }
 }

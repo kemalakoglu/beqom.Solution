@@ -3,10 +3,59 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 14-09-2023
 ### Added
--app.js
--package.json
--Dockerfile
--docker-compose.yml
--README.md
--changeLog.md file
--Unit Tests are written
+	-changeLog.md
+    -src/02-Domain/beqom.Domain.Aggregate/Option/Entities/
+    -src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/Enum/
+    -src/02-Domain/beqom.Domain.Repository/Handlers/
+    -src/02-Domain/beqom.Domain.Repository/OptionGenericRepository.cs
+    -src/02-Domain/beqom.Domain.Repository/OptionRepository.cs
+    -src/03-Application/beqom.Application.CQRS/beqom.Application.EventHandlers/ApplicationService.cs
+    -src/03-Application/beqom.Application.Contract/Services/IApplicationService.cs
+    -src/04-Presentation/beqom.Presentation.API/Controllers/OptionController.cs
+### Changed
+    -modified:   README.md
+    -modified:   beqom.sln
+    -deleted:    src/01-Core/beqom.Core.Contract/IRepository.cs
+    -deleted:    src/01-Core/beqom.Core.Contract/IRepositoryQueryHelper.cs
+    -modified:   src/01-Core/beqom.Core.Contract/ISerilogLogger.cs
+    -deleted:    src/01-Core/beqom.Core.Contract/IUnitOfWork.cs
+    -deleted:    src/01-Core/beqom.Core.Contract/JoinedClass/GroupCountResult.cs
+    -deleted:    src/01-Core/beqom.Core.Enumeration/Options.cs
+    -modified:   src/01-Core/beqom.Core.Helper/BusinessException.cs
+    -modified:   src/01-Core/beqom.Core.Helper/CreateAsyncResponse.cs
+    -modified:   src/01-Core/beqom.Core.Helper/CreateResponse.cs
+    -modified:   src/01-Core/beqom.Core.Helper/ResponseDTO.cs
+    -modified:   src/01-Core/beqom.Core.Logger/SerilogLogger.cs
+    -modified:   src/02-Domain/beqom.Domain.Aggregate/Base/BaseEntity.cs
+    -deleted:    src/02-Domain/beqom.Domain.Aggregate/Base/IBaseService.cs
+    -deleted:    src/02-Domain/beqom.Domain.Aggregate/Option/IOptionService.cs
+    -deleted:    src/02-Domain/beqom.Domain.Aggregate/Option/Option.cs
+    -deleted:    src/02-Domain/beqom.Domain.Aggregate/Option/OptionService.cs
+    -deleted:    src/02-Domain/beqom.Domain.Aggregate/Option/OptionServiceHandler.cs
+    -modified:   src/02-Domain/beqom.Domain.Aggregate/beqom.Domain.Aggregate.csproj
+    -deleted:    src/02-Domain/beqom.Domain.Context/Context/BaseEntity.cs
+    -deleted:    src/02-Domain/beqom.Domain.Context/Context/CoreContext.cs
+    -deleted:    src/02-Domain/beqom.Domain.Context/beqom.Domain.Context.csproj
+    -modified:   src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/DTO/Option/OptionRequestDto.cs
+    -modified:   src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/DTO/Option/OptionResponseDto.cs
+    -modified:   src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/beqom.Domain.Contract.csproj
+    -deleted:    src/02-Domain/beqom.Domain.Repository/MainRepository.cs
+    -deleted:    src/02-Domain/beqom.Domain.Repository/RepositoryQueryHelper.cs
+    -modified:   src/02-Domain/beqom.Domain.Repository/beqom.Domain.Repository.csproj
+    -modified:   src/03-Application/beqom.Application.CQRS/beqom.Application.EventHandlers/Option/OptionQuery.cs
+    -modified:   src/03-Application/beqom.Application.CQRS/beqom.Application.EventHandlers/beqom.Application.CommandQuery.csproj
+    -deleted:    src/03-Application/beqom.Application.Contract/Services/ICoreApplicationService.cs
+    -modified:   src/03-Application/beqom.Application.Service/ApplicationService.cs
+    -deleted:    src/04-Presentation/beqom.Presentation.API/Controllers/RefTypeController.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Extensions/DependencyInjection.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Extensions/ErrorHandlingMiddleware.cs
+    -deleted:    src/04-Presentation/beqom.Presentation.API/Extensions/FluentValidator.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Extensions/Logger.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Extensions/Mapping.cs
+    -deleted:    src/04-Presentation/beqom.Presentation.API/Extensions/Redis.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Extensions/Swagger.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Program.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/Startup.cs
+    -modified:   src/04-Presentation/beqom.Presentation.API/beqom.Presentation.API.csproj
+    -modified:   src/04-Presentation/beqom.Presentation.API/log.json
+    -deleted:    test/beqom.Test.Presentation/beqom.Test.Presentation.csproj

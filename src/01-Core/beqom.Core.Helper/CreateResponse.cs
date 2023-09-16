@@ -1,8 +1,9 @@
-﻿using beqom.Core.Resources;
+﻿using Microsoft.Extensions.Configuration;
 using Serilog;
 using Serilog.Events;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace beqom.Core.Helper
@@ -14,9 +15,9 @@ namespace beqom.Core.Helper
 
             string message = string.Empty;
             if (entity != null)
-                message = ResponseMessage.GetDescription(ResponseMessage.Success, methodName);
+                message = GetDescription(ResponseCodes.Success);
             else
-                message = ResponseMessage.GetDescription(ResponseMessage.NotFound, methodName);
+                message = GetDescription(ResponseCodes.NotFound);
             ResponseDTO<T> response = new ResponseDTO<T>
             {
                 Data = entity,
@@ -25,7 +26,7 @@ namespace beqom.Core.Helper
                 {
                     TrackId = Guid.NewGuid().ToString()
                 },
-                RC = entity == null ? ResponseMessage.NotFound : ResponseMessage.Success
+                RC = entity == null ? ResponseCodes.NotFound : ResponseCodes.Success
             };
             Log.Write(LogEventLevel.Information, message, response);
             return response;
@@ -35,9 +36,9 @@ namespace beqom.Core.Helper
         {
             string message = string.Empty;
             if (entity.Count() > 0)
-                message = ResponseMessage.GetDescription(ResponseMessage.Success, methodName);
+                message = GetDescription(ResponseCodes.Success);
             else
-                message = ResponseMessage.GetDescription(ResponseMessage.NotFound, methodName);
+                message = GetDescription(ResponseCodes.NotFound);
 
             ResponseListDTO<T> response = new ResponseListDTO<T>
             {
@@ -47,10 +48,21 @@ namespace beqom.Core.Helper
                 {
                     TrackId = Guid.NewGuid().ToString()
                 },
-                RC = entity == null ? ResponseMessage.NotFound : ResponseMessage.Success
+                RC = entity == null ? ResponseCodes.NotFound : ResponseCodes.Success
             };
             Log.Write(LogEventLevel.Information, message, response);
             return response;
+        }
+        public static IConfiguration GetConfiguration()
+        {
+            return new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true).Build();
+        }
+        public static string GetDescription(string RC)
+        {
+            IConfiguration config = GetConfiguration();
+            return config.GetSection("ResponseCodes:" + RC).Get<string>();
         }
     }
 }

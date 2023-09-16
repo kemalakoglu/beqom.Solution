@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\01-Core\beqom.Core.Helper\beqom.Core.Helper.csproj" />
+    <ProjectReference Include="..\..\01-Core\beqom.Core.Helper\beqom.Core.Extension.csproj" />
     <ProjectReference Include="..\..\02-Domain\beqom.Domain.Aggregate\beqom.Domain.Aggregate.csproj" />
   </ItemGroup>
 

@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="OptionRepositoryTest.cs" />
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +30,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\02-Domain\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj" />
+    <ProjectReference Include="..\..\src\02-Domain\beqom.Domain.Repository\beqom.Domain.Repository.csproj" />
   </ItemGroup>
 
 </Project>

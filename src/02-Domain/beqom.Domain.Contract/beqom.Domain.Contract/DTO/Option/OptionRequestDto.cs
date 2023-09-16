@@ -9,6 +9,6 @@ namespace beqom.Domain.Contract.DTO.Option
     public class OptionRequestDto : IRequest<OptionResponseDto>
     {
         [DataMember]
-        public OptionType option;
+        public OptionType Option;
     }
 }

@@ -1,8 +1,6 @@
-﻿using beqom.Domain.Aggregate.Base;
-
-namespace beqom.Domain.Aggregate.Option
+﻿namespace beqom.Domain.Aggregate.Option
 {
-    public class ConfigOption : BaseEntity
+    public class ConfigOption : Entities.Option
     {
        
     }

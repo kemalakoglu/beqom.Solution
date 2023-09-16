@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using beqom.Core.Helper;
 using beqom.Domain.Aggregate.Option;
+using beqom.Domain.Aggregate.Option.Entities;
 using beqom.Domain.Contract.DTO.Option;
 using beqom.Domain.Contract.Enum.OptionType;
 using beqom.Domain.Contract.Interface;
@@ -22,31 +23,11 @@ namespace beqom.Domain.Repository.Handlers
 
         public async Task<OptionResponseDto> Handle(OptionRequestDto request, CancellationToken cancellationToken)
         {
-            OptionResponseDto response;
-            if (request.option == OptionType.Default)
-            {
-                DefaultOption option = await this.optionRepository.GetDefault();
-                response = mapper.Map(option, new OptionResponseDto());
-            }
-            else
-            {
-                if (request.option == OptionType.Empty)
-                {
-                    IOptionGenericRepository<EmptyOption> repository = new OptionGenericRepository<EmptyOption>();
-                    EmptyOption option = await repository.Get();
-                    response = mapper.Map(option, new OptionResponseDto());
-                }
-                else if(request.option== OptionType.Config)
-                {
-                    IOptionGenericRepository<ConfigOption> repository = new OptionGenericRepository<ConfigOption>();
-                    ConfigOption option = await repository.Get();
-                    response = mapper.Map(option, new OptionResponseDto());
-                }
-                else
-                    return null;
-            }
-
+            var response = new OptionResponseDto();
+            Option option = await this.optionRepository.GetOption(request.Option);
+            response = mapper.Map<OptionResponseDto>(option);
             return response;
+
         }
     }
 }

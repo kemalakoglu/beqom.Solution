@@ -1,4 +1,4 @@
-﻿using beqom.Core.Resources;
+﻿using beqom.Core.Helper;
 using beqom.Domain.Contract.DTO.Error;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
@@ -60,26 +60,26 @@ namespace beqom.Presentation.API.Extensions
             if (exception.GetType() == typeof(HttpRequestException))
             {
                 code = HttpStatusCode.NotFound;
-                RC = ResponseMessage.NotFound;
+                RC = ResponseCodes.NotFound;
                 message = BusinessException.GetDescription(RC);
             }
             else if (exception.GetType() == typeof(AuthenticationException))
             {
                 code = HttpStatusCode.Unauthorized;
-                RC = ResponseMessage.Unauthorized;
+                RC = ResponseCodes.Unauthorized;
                 message = BusinessException.GetDescription(RC);
             }
             else if (exception.GetType() == typeof(BusinessException))
             {
                 var businesException = (BusinessException)exception;
-                message = BusinessException.GetDescription(businesException.RC, businesException.param1);
+                message = BusinessException.GetDescription(businesException.RC);
                 code = HttpStatusCode.InternalServerError;
                 RC = businesException.RC;
             }
             else if (exception.GetType() == typeof(Exception))
             {
                 code = HttpStatusCode.BadRequest;
-                RC = ResponseMessage.BadRequest;
+                RC = ResponseCodes.BadRequest;
                 message = BusinessException.GetDescription(RC);
             }
 
