@@ -1177,3 +1177,15 @@
 {"Timestamp":"2023-09-16T13:44:20.1789437+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-16T13:44:40.3479394+02:00","Level":"Error","MessageTemplate":"Object must implement IConvertible.","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-16T13:44:51.5977511+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:37.1583891+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:39.0579593+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:47.3697788+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:47.3877049+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:47.7076947+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:47.7146774+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:47.7148192+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:48.0669543+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:48.2154969+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:48.5212786+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:22:59.4582155+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-16T14:23:11.3126456+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}

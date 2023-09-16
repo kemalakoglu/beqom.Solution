@@ -35,11 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\01-Core\beqom.Core.Extension\beqom.Core.Extension.csproj" />
     <ProjectReference Include="..\..\02-Domain\beqom.Domain.Aggregate\beqom.Domain.Aggregate.csproj" />
     <ProjectReference Include="..\..\02-Domain\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj" />
     <ProjectReference Include="..\..\02-Domain\beqom.Domain.Repository\beqom.Domain.Repository.csproj" />
-    <ProjectReference Include="..\..\03-Application\beqom.Application.Contract\beqom.Application.Contract.csproj" />
-    <ProjectReference Include="..\..\03-Application\beqom.Application.CQRS\beqom.Application.EventHandlers\beqom.Application.CommandQuery.csproj" />
+    <ProjectReference Include="..\..\03-Application\beqom.Application.CommandQuery\beqom.Application.CommandQuery.csproj" />
   </ItemGroup>
 
   <ItemGroup>

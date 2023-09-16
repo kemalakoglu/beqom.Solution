@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace beqom.Core.Helper
+namespace beqom.Core.Extension
 {
     [DataContract]
     public class ResponseDTO<T> where T : class

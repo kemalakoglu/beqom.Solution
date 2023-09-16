@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace beqom.Core.Helper
+namespace beqom.Core.Extension
 {
     public static class CreateResponse<T> where T : class
     {

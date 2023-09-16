@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using beqom.Core.Helper;
-using beqom.Domain.Aggregate.Option;
 using beqom.Domain.Aggregate.Option.Entities;
 using beqom.Domain.Contract.DTO.Option;
-using beqom.Domain.Contract.Enum.OptionType;
 using beqom.Domain.Contract.Interface;
 using MediatR;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace beqom.Domain.Repository.Handlers
 {

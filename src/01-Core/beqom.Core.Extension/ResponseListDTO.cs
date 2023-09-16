@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace beqom.Core.Helper
+namespace beqom.Core.Extension
 {
     [DataContract]
     public class ResponseListDTO<T> where T : class

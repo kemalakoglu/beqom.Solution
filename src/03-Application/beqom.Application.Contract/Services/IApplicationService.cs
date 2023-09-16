@@ -1,5 +1,4 @@
-﻿using beqom.Core.Helper;
-using beqom.Domain.Contract.DTO.Option;
+﻿using beqom.Domain.Contract.DTO.Option;
 using System.Threading.Tasks;
 
 namespace beqom.Application.Contract.Services

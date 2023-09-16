@@ -1,8 +1,7 @@
 ﻿using beqom.Application.Contract.Services;
-using beqom.Core.Helper;
+using beqom.Core.Extension;
 using beqom.Domain.Contract.DTO.Option;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace beqom.Presentation.API.Controllers

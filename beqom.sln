@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Core.Enumeration", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Presentation.API", "src\04-Presentation\beqom.Presentation.API\beqom.Presentation.API.csproj", "{2D2B63FC-19C9-487E-B618-36E4D81DF6FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Core.Extension", "src\01-Core\beqom.Core.Helper\beqom.Core.Extension.csproj", "{D18617EC-D320-44E1-8FE4-55C9215F6F08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Core.Extension", "src\01-Core\beqom.Core.Extension\beqom.Core.Extension.csproj", "{D18617EC-D320-44E1-8FE4-55C9215F6F08}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Application", "03-Application", "{158D49BE-5571-42A7-8CBC-1F3B01B588EF}"
 EndProject
@@ -27,11 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Domain.Aggregate", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Core.Logger", "src\01-Core\beqom.Core.Logger\beqom.Core.Logger.csproj", "{167369F5-79E3-4ECF-AB47-17512C60DC2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Application.CommandQuery", "src\03-Application\beqom.Application.CQRS\beqom.Application.EventHandlers\beqom.Application.CommandQuery.csproj", "{3E66B760-BCB5-456B-A6D2-C8ED8717B58D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Application.CommandQuery", "src\03-Application\beqom.Application.CommandQuery\beqom.Application.CommandQuery.csproj", "{3E66B760-BCB5-456B-A6D2-C8ED8717B58D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Domain.Contract", "src\02-Domain\beqom.Domain.Contract\beqom.Domain.Contract\beqom.Domain.Contract.csproj", "{A046D515-ACDE-434C-BC1D-FEE669C0B8D3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Test.Aggregate", "test\beqom.Test.Presentation\beqom.Test.Aggregate.csproj", "{8C57FECC-43E8-40B5-814F-18035B1F834D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Test.Aggregate", "test\beqom.Test.Aggregate\beqom.Test.Aggregate.csproj", "{8C57FECC-43E8-40B5-814F-18035B1F834D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "beqom.Domain.Repository", "src\02-Domain\beqom.Domain.Repository\beqom.Domain.Repository.csproj", "{5D520BE0-74F4-4C75-B110-A7CA95BDEA99}"
 EndProject
