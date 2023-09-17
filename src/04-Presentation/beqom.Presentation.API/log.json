@@ -1084,9 +1084,9 @@
 {"Timestamp":"2023-09-15T17:45:08.2616636+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:45:08.4278490+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:45:16.6324893+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
-{"Timestamp":"2023-09-15T17:45:24.8741487+02:00","Level":"Error","MessageTemplate":"Failed to convert configuration value at 'ConfigOption:Status' to type 'System.Boolean'.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-15T17:45:24.8741487+02:00","Level":"Error","MessageTemplate":"Failed to convert configuration value at 'NonEmptyOption:Status' to type 'System.Boolean'.","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:45:36.0764396+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
-{"Timestamp":"2023-09-15T17:46:51.6383239+02:00","Level":"Error","MessageTemplate":"Failed to convert configuration value at 'ConfigOption:Status' to type 'System.Boolean'.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-15T17:46:51.6383239+02:00","Level":"Error","MessageTemplate":"Failed to convert configuration value at 'NonEmptyOption:Status' to type 'System.Boolean'.","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:58:28.3326049+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:58:29.5950926+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-15T17:58:47.0540017+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}

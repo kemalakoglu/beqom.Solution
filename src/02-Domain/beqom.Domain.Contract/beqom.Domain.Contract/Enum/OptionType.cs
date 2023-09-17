@@ -1,15 +1,14 @@
 ﻿using beqom.Domain.Aggregate.Option;
-using beqom.Domain.Aggregate.Option.Entities;
 using System;
 
 namespace beqom.Domain.Contract.Enum.OptionType
 {
     public enum OptionType
     {
-        [OptionClass(typeof(Option))]
+        [OptionClass(typeof(DefaultOption))]
         Default,
 
-        [OptionClass(typeof(ConfigOption))]
+        [OptionClass(typeof(NonEmptyOption))]
         Config,
 
         [OptionClass(typeof(EmptyOption))]

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using beqom.Domain.Aggregate.Option.Entities;
+using beqom.Domain.Aggregate.Option;
 using beqom.Domain.Contract.DTO.Option;
 using beqom.Domain.Contract.Interface;
 using MediatR;

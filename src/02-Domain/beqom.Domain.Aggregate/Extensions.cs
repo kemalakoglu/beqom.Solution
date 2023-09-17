@@ -12,10 +12,10 @@ namespace beqom.Domain.Aggregate
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true).Build();
         }
-        public static Option.Entities.Option GetOption(string optionName)
+        public static Option.Option GetValue(this Option.Option option, string optionName)
         {
             IConfiguration config = GetConfiguration();
-            var response = new Option.Entities.Option();
+            var response = new Option.Option();
             response.Id = config.GetSection(optionName + ":Id").Get<Guid>();
             response.Name = config.GetSection(optionName + ":Name").Get<string>();
             response.Status = config.GetSection(optionName + ":Status").Get<bool>();
@@ -23,7 +23,7 @@ namespace beqom.Domain.Aggregate
             return response;
         }
 
-        public static bool HasValue(this Option.Entities.Option option)
+        public static bool HasValue(this Option.Option option)
         {
             if (option.Id == Guid.Empty && string.IsNullOrEmpty(option.Name))
                 return false;
@@ -31,7 +31,7 @@ namespace beqom.Domain.Aggregate
             return true;
         }
 
-        public static bool IsSame(this Option.Entities.Option option, Option.Entities.Option compared)
+        public static bool IsSame(this Option.Option option, Option.Option compared)
         {
             if (option.Id == compared.Id && option.Name == compared.Name && option.IsActive == compared.IsActive && option.Status == compared.Status)
                 return true;
@@ -39,7 +39,7 @@ namespace beqom.Domain.Aggregate
             return false;
         }
 
-        public static Option.Entities.Option ValueOr(this Option.Entities.Option option, Func<Option.Entities.Option> function)
+        public static Option.Option ValueOr(this Option.Option option, Func<Option.Option> function)
         {
             return option;
         }
@@ -49,7 +49,7 @@ namespace beqom.Domain.Aggregate
             return option;
         }
 
-        public static Option.Entities.Option Select(this Option.Entities.Option option, Func<Option.Entities.Option, Option.Entities.Option> p)
+        public static Option.Option Select(this Option.Option option, Func<Option.Option, Option.Option> p)
         {
             if (option is null)
                 return null;

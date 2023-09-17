@@ -1,24 +1,14 @@
 using beqom.Domain.Aggregate;
 using beqom.Domain.Aggregate.Option;
-using beqom.Domain.Aggregate.Option.Entities;
 using beqom.Domain.Contract.Interface;
 using beqom.Domain.Repository;
 using System;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace beqom.Test.Presentation
 {
     public class OptionTest
     {
-        private readonly IOptionRepository optionRepository;
-
-
-        public OptionTest()
-        {
-            this.optionRepository = new OptionRepository();
-        }
-
         [Fact]
         public void Empty_Option_Has_No_Value()
         {
@@ -28,41 +18,41 @@ namespace beqom.Test.Presentation
         [Fact]
         public void Default_Option_IsEmpty()
         {
-            Option defaultOption = new Option();
-            Assert.Equal(Option.Empty<Option>().Id, defaultOption.Id);
-            Assert.Equal(Option.Empty<Option>().Name, defaultOption.Name);
-            Assert.Equal(Option.Empty<Option>().Status, defaultOption.Status);
-            Assert.Equal(Option.Empty<Option>().IsActive, defaultOption.IsActive);
+            DefaultOption defaultOption = new Option<DefaultOption>(new DefaultOption()).FromValue();
+            Assert.Equal(Option.Empty<DefaultOption>().Id, defaultOption.Id);
+            Assert.Equal(Option.Empty<DefaultOption>().Name, defaultOption.Name);
+            Assert.Equal(Option.Empty<DefaultOption>().Status, defaultOption.Status);
+            Assert.Equal(Option.Empty<DefaultOption>().IsActive, defaultOption.IsActive);
             Assert.IsType<Option>(Option.Empty<Option>());
-            Assert.Equal(typeof(Option), Option.Empty<Option>().GetType());
+            Assert.Equal(typeof(Option), Option.Empty<DefaultOption>().GetType());
         }
 
         [Fact]
         public void Non_Empty_Option_Has_Value()
         {
-            Assert.True(new Option<ConfigOption>().FromValue().HasValue());
+            Assert.True(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetValue(typeof(NonEmptyOption).Name).HasValue());
         }
 
         [Fact]
         public void Empty_Option_Value_Throws()
         {
-            Assert.Throws<InvalidOperationException>(() => Option.Empty<ConfigOption>());
+            Assert.Throws<InvalidOperationException>(() => Option.Empty<NonEmptyOption>());
         }
 
         [Fact]
         public void Non_Empty_Option_Returns_Its_Value()
         {
-            var value = new Option<ConfigOption>().FromValue();
-            Assert.True(value.IsSame(new Option<ConfigOption>().FromValue()));
+            var value = new Option<NonEmptyOption>(new NonEmptyOption()).FromValue();
+            Assert.True(value.IsSame(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue()));
         }
 
         [Fact]
         public void Comparison_Is_Correct_If_Not_Empty()
         {
-            var value = new Option<ConfigOption>().FromValue();
-            Assert.True(new Option<ConfigOption>().FromValue().IsSame(new Option<ConfigOption>().FromValue()));
-            Assert.True(new Option<ConfigOption>().FromValue().GetType() == new Option<ConfigOption>().FromValue().GetType());
-            Assert.False(new Option<ConfigOption>().FromValue() == Option.Empty<EmptyOption>());
+            var value = new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetValue(typeof(NonEmptyOption).Name);
+            Assert.True(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetValue(typeof(NonEmptyOption).Name).IsSame(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetValue(typeof(NonEmptyOption).Name)));
+            Assert.True(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetType() == new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetType());
+            Assert.False(new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetValue(typeof(NonEmptyOption).Name) == Option.Empty<EmptyOption>());
         }
 
         [Fact]
@@ -82,15 +72,15 @@ namespace beqom.Test.Presentation
         [Fact]
         public void Non_Empty_Option_Select_Returns_ExpectedType()
         {
-            var result = new Option<ConfigOption>().FromValue().Select(v => v).GetType();
-            Assert.True(result == new Option<ConfigOption>().FromValue().GetType());
+            var result = new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().Select(v => v).GetType();
+            Assert.True(result == new Option<NonEmptyOption>(new NonEmptyOption()).FromValue().GetType());
         }
 
         [Fact]
         public void Non_Empty_Option_ValueOr_Does_Not_Evaluate_Else_Branch()
         {
             var value = new object();
-            var option = new Option<object>().FromValue() ?? new object();
+            var option = new Option<object>(new object()).FromValue();
             Func<EmptyOption> fct = () =>
             {
                 // we will break on purpose here.

@@ -1,20 +1,22 @@
 ﻿using beqom.Domain.Aggregate.Base;
 using System;
 
-namespace beqom.Domain.Aggregate.Option.Entities
+namespace beqom.Domain.Aggregate.Option
 {
-    public class Option<T> where T : class 
+    public class Option<T> : IOption<T>
     {
-        public Option FromValue()
+        private T option;
+
+        public Option(T option)
+        {
+            this.option = option;
+        }
+
+        public T FromValue()
         {
             if (typeof(T) == typeof(EmptyOption))
                 throw new InvalidOperationException();
-
-            if (typeof(T) != typeof(ConfigOption) && typeof(T) != typeof(Option))
-                return null;
-
-            var response = Extensions.GetOption(typeof(T).Name);
-            return response;
+            return option;
         }
     }
 
@@ -25,10 +27,10 @@ namespace beqom.Domain.Aggregate.Option.Entities
             if (typeof(T) == typeof(EmptyOption))
                 return null;
 
-            if (typeof(T) == typeof(ConfigOption))
+            if (typeof(T) == typeof(NonEmptyOption))
                 throw new InvalidOperationException();
 
-            return Extensions.GetOption(typeof(T).Name);
+            return new Option();
         }
     }
 }

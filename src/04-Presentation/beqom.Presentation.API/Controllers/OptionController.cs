@@ -20,7 +20,7 @@ namespace beqom.Presentation.API.Controllers
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        [Route("api/Option/Get")]
+        [Route("api/Option/GetOption")]
         [HttpPost]
         public async Task<IActionResult> GetOption([FromBody] OptionRequestDto request)
         {
