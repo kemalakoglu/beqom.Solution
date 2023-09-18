@@ -6,7 +6,8 @@ ASP.NET Core Dependency
 
 ## Principles
 SOLID <br/>
-Domain Driven Design
+TDD <br/>
+DDD
 
 ## Object Mappers
 AutoMapper
