@@ -162,3 +162,31 @@ All notable changes to this project will be documented in this file.
 	-rename src/02-Domain/beqom.Domain.Aggregate/Option/{Entities => }/ConfigOption.cs (58%)  
 	-delete mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/Entities/EmptyOption.cs
 	-rename src/02-Domain/beqom.Domain.Aggregate/Option/{Entities => }/Option.cs (50%)
+	
+## [1.0.23] - 18-09-2023
+
+### Added	
+	-create mode 100644 .dockerignore
+	-create mode 100644 src/02-Domain/beqom.Domain.Aggregate/Employee/AggregateRoot/Report.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/DTO/Report/ReportRequestDto.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/DTO/Report/ReportResponseDto.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/Interface/IEmployeeRepository.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/Interface/IReportRepository.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Repository/EmployeeRepository.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Repository/Handlers/ReportServiceHandler.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Repository/ReportRepository.cs
+	-create mode 100644 src/03-Application/beqom.Application.CommandQuery/Report/ReportQuery.cs
+	-create mode 100644 src/04-Presentation/beqom.Presentation.API/Controllers/ReportController.cs
+	-create mode 100644 src/04-Presentation/beqom.Presentation.API/Dockerfile
+	-create mode 100644 test/beqom.API.Test/ReportControllerTest.cs
+	-create mode 100644 test/beqom.API.Test/beqom.API.Test.csproj
+	-create mode 100644 test/beqom.Applidation.Test/ReportQueryTest.cs
+	-create mode 100644 test/beqom.Applidation.Test/beqom.Applidation.Test.csproj
+	-create mode 100644 test/beqom.Repository.Test/EmployeeRepositoryTest.cs
+	-create mode 100644 test/beqom.Repository.Test/ReportRepositoryTest.cs
+	-create mode 100644 test/beqom.Repository.Test/beqom.Repository.Test.csproj
+### Changed		     
+	-delete mode 100644 src/02-Domain/beqom.Domain.Contract/beqom.Domain.Contract/Interface/IOptionGenericRepository.cs
+	-delete mode 100644 src/04-Presentation/beqom.Presentation.API/refactor.cs
+	-rename test/beqom.Test.Aggregate/{beqom.Test.Aggregate.csproj => beqom.Aggregate.Test.csproj} (100%)
+	
