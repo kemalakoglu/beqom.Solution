@@ -1,5 +1,5 @@
 ## beqom.Solution
-Core.Infrastructure .Net 6.x support !
+beqom.Solution .Net 6.x support !
 
 ## IoC
 ASP.NET Core Dependency 
