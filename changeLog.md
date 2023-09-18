@@ -2,6 +2,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 14-09-2023
+
 ### Added
 	-changeLog.md
     -src/02-Domain/beqom.Domain.Aggregate/Option/Entities/
@@ -63,6 +64,7 @@ All notable changes to this project will be documented in this file.
 	
 	
 ## [1.0.1] - 16-09-2023
+
 ### Added	
 	-src/01-Core/beqom.Core.Helper/ResponseCodes.cs
     -src/01-Core/beqom.Core.Helper/beqom.Core.Extension.csproj
@@ -147,4 +149,16 @@ All notable changes to this project will be documented in this file.
     -deleted:    src/04-Presentation/beqom.Presentation.GraphQL/beqom.Presentation.GraphQL/web.config
     -deleted:    test/beqom.Test.Presentation/OptionRepositoryTest.cs
     -deleted:    test/beqom.Test.Presentation/beqom.Test.Repository.csproj
-        
+	
+## [1.0.2] - 17-09-2023
+
+### Added	
+	-create mode 100644 src/02-Domain/beqom.Domain.Aggregate/Employee/Employee.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/DefaultOption.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/EmptyOption.cs
+	-create mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/IOption.cs
+	-create mode 100644 src/04-Presentation/beqom.Presentation.API/refactor.cs
+### Changed		     
+	-rename src/02-Domain/beqom.Domain.Aggregate/Option/{Entities => }/ConfigOption.cs (58%)  
+	-delete mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/Entities/EmptyOption.cs
+	-rename src/02-Domain/beqom.Domain.Aggregate/Option/{Entities => }/Option.cs (50%)

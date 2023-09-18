@@ -6,6 +6,6 @@ namespace beqom.Domain.Contract.Interface
 {
     public interface IOptionRepository
     {
-        Task<Option> GetOption(OptionType request);
+        Task<Option> GetOptionAsync(OptionType request);
     }
 }

@@ -18,6 +18,7 @@ Kibana
 
 ## Documentation
 Swagger
+https://localhost:44364/swagger/index.html
 
 ## CQRS
 Mediatr
@@ -27,27 +28,56 @@ Mediatr
  - Async await first 
  - GlobalQuery Filtering
  - Domain Driven Design Concepts
- - Repository and UnitofWork pattern implementations
+ - Repository pattern implementations
  - Object to object mapping with abstraction
  - Net 6.x support
- - Aspect Oriented Programming
  - Simple Usage
  - Modularity
  - Event Sourcing
+ - Generic and Intigrated Response provider
+ - CQRS usage
+ - Custom Exception
+ - Dockerized API
  
    
 
 ***Basic Usage***
 
-     WebHost.CreateDefaultBuilder(args)
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>();
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+               Host.CreateDefaultBuilder(args)
+                   .ConfigureWebHostDefaults(webBuilder =>
+                   {
+                       webBuilder.UseContentRoot(Directory.GetCurrentDirectory());
+                       webBuilder.UseIISIntegration();
+                       webBuilder.UseStartup<Startup>();
+                   });
                          
 ***Conventional Registration***	 	
 
-      services.AddScoped<IUserStoreService, UserStoreService>();
+       public static class DependencyInjection
+    {
+        public static void ConfigureMediatr(this IServiceCollection services)
+        {
+            services.AddMediatR(typeof(OptionServiceHandler).GetTypeInfo().Assembly);
+        }
+
+        public static void ConfigureRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IOptionRepository, OptionRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IReportRepository, ReportRepository>();
+        }
+
+        public static void ConfigureApplicationService(this IServiceCollection services)
+        {
+            services.AddScoped<IApplicationService, ApplicationService>();
+        }
+    }
                              ...
                          })
 
@@ -64,34 +94,36 @@ Mediatr
 ***Serilog Activation***
  
 
-        services.ConfigureLogger(Configuration);
-		
-		 Log.Logger = new LoggerConfiguration()
+         Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
-                .Enrich.WithProperty("Application", "Core.Infrastructure.Presentation.API")
+                .Enrich.WithProperty("Application", "app")
                 .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
                 //.WriteTo.File(new JsonFormatter(), "log.json")
                 //.ReadFrom.Configuration(configuration)
-                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("http://localhost:9200"))
+                .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri("localhost:9200"))
                 {
                     AutoRegisterTemplate = true,
                     AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-                    FailureCallback = e => Console.WriteLine("Unable to submit event " + e.MessageTemplate),
+                    FailureCallback = e => Console.WriteLine("fail message: " + e.MessageTemplate),
                     EmitEventFailure = EmitEventFailureHandling.WriteToSelfLog |
                                        EmitEventFailureHandling.WriteToFailureSink |
                                        EmitEventFailureHandling.RaiseCallback,
-                    FailureSink = new FileSink("log.json", new JsonFormatter(), null)
+                    FailureSink = new FileSink("log" + ".json", new JsonFormatter(), null)
                 })
                 .MinimumLevel.Verbose()
                 .CreateLogger();
-            Log.Information("WebApi is Starting...");
+            Log.Information("WebApi Starting...");
 		
 		
 
-***Interceptors Activation***
+***Middleware Activation***
 
-     public ErrorHandlingMiddleware(RequestDelegate next)
+     public class ErrorHandlingMiddleware
+    {
+        private readonly RequestDelegate next;
+
+        public ErrorHandlingMiddleware(RequestDelegate next)
         {
             this.next = next;
         }
@@ -135,133 +167,118 @@ Mediatr
             if (exception.GetType() == typeof(HttpRequestException))
             {
                 code = HttpStatusCode.NotFound;
-                RC = ResponseMessage.NotFound;
+                RC = ResponseCodes.NotFound;
                 message = BusinessException.GetDescription(RC);
             }
             else if (exception.GetType() == typeof(AuthenticationException))
             {
                 code = HttpStatusCode.Unauthorized;
-                RC = ResponseMessage.Unauthorized;
+                RC = ResponseCodes.Unauthorized;
                 message = BusinessException.GetDescription(RC);
             }
             else if (exception.GetType() == typeof(BusinessException))
             {
-                var businesException = (BusinessException) exception;
-                message = BusinessException.GetDescription(businesException.RC, businesException.param1);
+                var businesException = (BusinessException)exception;
+                message = BusinessException.GetDescription(businesException.RC);
                 code = HttpStatusCode.InternalServerError;
                 RC = businesException.RC;
             }
             else if (exception.GetType() == typeof(Exception))
             {
                 code = HttpStatusCode.BadRequest;
-                RC = ResponseMessage.BadRequest;
+                RC = ResponseCodes.BadRequest;
                 message = BusinessException.GetDescription(RC);
             }
 
-            var response = new Error
+            var response = new ErrorDTO
             {
                 Message = message,
                 RC = RC
             };
             context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) code;
+            context.Response.StatusCode = (int)code;
             return context.Response.WriteAsync(JsonConvert.SerializeObject(response));
         }
+    }
 	
 	
         
 ***Application Service definitions***
 
-    // Query methods all comes from base class. You can override if you want!
-     public class RefTypeService : IRefTypeService
+    / public partial class ApplicationService : IApplicationService
     {
-        private readonly IUnitOfWork uow;
-        private readonly IMapper mapper;
-
-        public RefTypeService(IUnitOfWork uow, IMapper mapper)
+        private readonly IMediator mediator;
+        public ApplicationService(IMediator mediator)
         {
-            this.uow = uow;
-            this.mapper = mapper;
+            this.mediator = mediator;
         }
 		
-		....
-	}
-	
-    // CRUD methods all comes from base class. You can override if you want!
-     public class RefTypeService : IRefTypeService
-    {
-        private readonly IUnitOfWork uow;
-        private readonly IMapper mapper;
-
-        public RefTypeService(IUnitOfWork uow, IMapper mapper)
+		public async Task<IEnumerable<ReportResponseDto>> GetReportsAsync(ReportRequestDto request)
         {
-            this.uow = uow;
-            this.mapper = mapper;
+            return await this.mediator.Send(request);
         }
 		
-		....
-	}
+		public async Task<OptionResponseDto> GetOptionAsync(OptionRequestDto request)
+        {
+            return await this.mediator.Send(request);
+        }
+    }
 	
 	
-***CommandHandlers definitions***
+***QueryHandlers definitions***
 
-     /// <summary>
-        /// To filter Operations
-        /// </summary>
-        /// <param name="pFilter">filter exp. : <code>.Filter(x=>x.EntityProperty != null)</code></param>
-        /// <returns>Added filter functionality to RepositoryQueryHelper Class</returns>
-        IRepositoryQueryHelper<T> Filter(Expression<Func<T, bool>> pFilter);
-        /// <summary>
-        /// To Order Operations
-        /// </summary>
-        /// <param name="orderBy">Order Exp. <code>.OrderBy(x => x.OrderBy(y => y.EntityProperty).ThenBy(z => z.EntityProperty2))</code></param>
-        /// <returns>Added filter functionality to RepositoryQueryHelper Class</returns>
-        IRepositoryQueryHelper<T> OrderBy(Func<IQueryable<T>, IOrderedQueryable<T>> orderBy);
-        /// <summary>
-        /// To GroupBy Operations
-        /// </summary>
-        /// <param name="groupBy">GroupBy Operations <code>.OrderBy(x => x.OrderBy(y => y.EntityProperty).ThenBy(z => z.EntityProperty2))</code></param>
-        /// <returns>Added GroupBy functionality to RepositoryQueryHelper Class</returns>
-        IRepositoryQueryHelper<T> GroupBy(Func<IQueryable<T>, IGrouping<int, GroupCountResult>> groupBy);
-        /// <summary>
-        /// To Include Operations (Set Included Tables Data)
-        /// </summary>
-        /// <param name="expression">Include Exp. <code>.Include(x=>x.EntityName)</code></param>
-        /// <returns>Added Include functionality to RepositoryQueryHelper Class</returns>
-        IRepositoryQueryHelper<T> Include(Expression<Func<T, object>> expression);
-        /// <summary>
-        /// To paging by filtered, ordered and included or not
-        /// </summary>
-        /// <param name="pPage">Page Number</param>
-        /// <param name="pPageSize">Data number</param>
-        /// <param name="totalCount">Toplam Kayıt Sayısı</param>
-        /// <returns>Data List</returns>
-        IEnumerable<T> GetPage(
-            int pPage, int pPageSize, out int totalCount);
-        /// <summary>
-        /// To get all data by filtered, ordered and included or not
-        /// </summary>
-        /// <returns>Data List</returns>
-        IEnumerable<T> Get(bool isAsNoTracking = false);
+	public class OptionServiceHandler: IRequestHandler<OptionRequestDto, OptionResponseDto>
+    {
+        private readonly IMapper mapper;
+        private readonly IOptionRepository optionRepository;
+        public OptionServiceHandler(IMapper mapper, IOptionRepository optionRepository)
+        {
+            this.mapper = mapper;
+            this.optionRepository = optionRepository;
+        }
 
-        /// <summary>
-        /// To get all data by filtered, ordered and included or not
-        /// </summary>
-        /// <returns>Data List</returns>
-        T GetFirst();
+        public async Task<OptionResponseDto> Handle(OptionRequestDto request, CancellationToken cancellationToken)
+        {
+            var response = new OptionResponseDto();
+            Option option = await this.optionRepository.GetOptionAsync(request.Option);
+            response = mapper.Map<OptionResponseDto>(option);
+            return response;
+
+        }
+    }
+	
+	public class ReportServiceHandler : IRequestHandler<ReportRequestDto, IEnumerable<ReportResponseDto>>
+    {
+        private readonly IMapper mapper;
+        private readonly IReportRepository reportRepository;
+        public ReportServiceHandler(IMapper mapper, IReportRepository reportRepository)
+        {
+            this.mapper = mapper;
+            this.reportRepository = reportRepository;
+        }
+
+        public async Task<IEnumerable<ReportResponseDto>> Handle(ReportRequestDto request, CancellationToken cancellationToken)
+        {
+            IEnumerable<ReportResponseDto> response = new List<ReportResponseDto>();
+            IEnumerable<Report> report = await this.reportRepository.GetReportAsync();
+            response = mapper.Map<IEnumerable<ReportResponseDto>>(report);
+            return response;
+        }
+    }
      
 
-***Log Service definitions***
-
-              public static ResponseBaseDTO Make(T entity, string methodName)
+***Log and Response Service definitions***
+ public static class CreateResponse<T> where T : class
+    {
+        public static ResponseDTO<T> Return(T entity, string methodName)
         {
-           
+
             string message = string.Empty;
-            if (entity!=null)
-                message = ResponseMessage.GetDescription(ResponseMessage.Success, methodName);
+            if (entity != null)
+                message = GetDescription(ResponseCodes.Success);
             else
-                message = ResponseMessage.GetDescription(ResponseMessage.NotFound, methodName);
-            ResponseBaseDTO response= new ResponseBaseDTO
+                message = GetDescription(ResponseCodes.NotFound);
+            ResponseDTO<T> response = new ResponseDTO<T>
             {
                 Data = entity,
                 Message = message,
@@ -269,30 +286,42 @@ Mediatr
                 {
                     TrackId = Guid.NewGuid().ToString()
                 },
-                RC = ResponseMessage.Success
-            };
-           Log.Write(LogEventLevel.Information, message,response);
-           return response;
-        }
-
-        public static ResponseBaseDTO Make(IEnumerable<T> entity, string methodName)
-        {
-            string message = string.Empty;
-            if (entity.Count() > 0)
-                message = ResponseMessage.GetDescription(ResponseMessage.Success, methodName);
-            else
-                message = ResponseMessage.GetDescription(ResponseMessage.NotFound, methodName);
-
-            ResponseBaseDTO response = new ResponseBaseDTO
-            {
-                Data = entity,
-                Message = message,
-                Information = new Information
-                {
-                    TrackId = Guid.NewGuid().ToString()
-                },
-                RC = ResponseMessage.Success
+                RC = entity == null ? ResponseCodes.NotFound : ResponseCodes.Success
             };
             Log.Write(LogEventLevel.Information, message, response);
             return response;
         }
+
+        public static ResponseListDTO<T> Return(IEnumerable<T> entity, string methodName)
+        {
+            string message = string.Empty;
+            if (entity.Count() > 0)
+                message = GetDescription(ResponseCodes.Success);
+            else
+                message = GetDescription(ResponseCodes.NotFound);
+
+            ResponseListDTO<T> response = new ResponseListDTO<T>
+            {
+                Data = entity,
+                Message = message,
+                Information = new Information
+                {
+                    TrackId = Guid.NewGuid().ToString()
+                },
+                RC = entity == null ? ResponseCodes.NotFound : ResponseCodes.Success
+            };
+            Log.Write(LogEventLevel.Information, message, response);
+            return response;
+        }
+        public static IConfiguration GetConfiguration()
+        {
+            return new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true).Build();
+        }
+        public static string GetDescription(string RC)
+        {
+            IConfiguration config = GetConfiguration();
+            return config.GetSection("ResponseCodes:" + RC).Get<string>();
+        }
+    }

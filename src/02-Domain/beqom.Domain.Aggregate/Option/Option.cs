@@ -22,7 +22,7 @@ namespace beqom.Domain.Aggregate.Option
 
     public class Option : BaseEntity
     {
-        public static Option Empty<T>() where T: class
+        public static Option Empty<T>() where T : class
         {
             if (typeof(T) == typeof(EmptyOption))
                 return null;

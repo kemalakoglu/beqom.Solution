@@ -10,6 +10,12 @@ namespace beqom.Core.Extension
 {
     public static class CreateResponse<T> where T : class
     {
+        /// <summary>
+        /// Return
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="methodName"></param>
+        /// <returns></returns>
         public static ResponseDTO<T> Return(T entity, string methodName)
         {
 
@@ -32,6 +38,12 @@ namespace beqom.Core.Extension
             return response;
         }
 
+        /// <summary>
+        /// Return
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="methodName"></param>
+        /// <returns></returns>
         public static ResponseListDTO<T> Return(IEnumerable<T> entity, string methodName)
         {
             string message = string.Empty;
@@ -53,12 +65,23 @@ namespace beqom.Core.Extension
             Log.Write(LogEventLevel.Information, message, response);
             return response;
         }
+
+        /// <summary>
+        /// GetConfiguration
+        /// </summary>
+        /// <returns></returns>
         public static IConfiguration GetConfiguration()
         {
             return new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", true, true).Build();
         }
+
+        /// <summary>
+        /// GetDescription
+        /// </summary>
+        /// <param name="RC"></param>
+        /// <returns></returns>
         public static string GetDescription(string RC)
         {
             IConfiguration config = GetConfiguration();

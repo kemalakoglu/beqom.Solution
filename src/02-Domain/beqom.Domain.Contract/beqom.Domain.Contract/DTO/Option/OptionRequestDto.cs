@@ -1,5 +1,4 @@
-﻿using beqom.Domain.Aggregate.Option;
-using beqom.Domain.Contract.Enum.OptionType;
+﻿using beqom.Domain.Contract.Enum.OptionType;
 using MediatR;
 using System.Runtime.Serialization;
 

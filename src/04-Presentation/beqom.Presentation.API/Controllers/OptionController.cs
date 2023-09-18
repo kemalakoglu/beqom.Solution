@@ -1,6 +1,7 @@
 ﻿using beqom.Application.Contract.Services;
 using beqom.Core.Extension;
 using beqom.Domain.Contract.DTO.Option;
+using beqom.Domain.Contract.Enum.OptionType;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -15,17 +16,18 @@ namespace beqom.Presentation.API.Controllers
             this.appService = appService;
         }
 
+
         /// <summary>
-        /// AddRefType
+        /// GetOption
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="optionType"></param>
         /// <returns></returns>
-        [Route("api/Option/GetOption")]
-        [HttpPost]
-        public async Task<IActionResult> GetOption([FromBody] OptionRequestDto request)
+        [HttpGet]
+        [Route("api/Option/GetOptionAsync/{optionType}")]
+        public async Task<IActionResult> GetOptionAsync([FromRoute] OptionType optionType)
         {
-            var data = await this.appService.GetOption(request);
-            var response = CreateResponse<OptionResponseDto>.Return(data, "GetOption Controller");
+            var data = await this.appService.GetOptionAsync(new OptionRequestDto { Option = optionType });
+            var response = CreateResponse<OptionResponseDto>.Return(data, "GetOptionAsync Controller");
             return Ok(response);
         }
     }

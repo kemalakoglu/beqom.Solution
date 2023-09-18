@@ -19,6 +19,8 @@ namespace beqom.Presentation.API.Extensions
         public static void ConfigureRepositories(this IServiceCollection services)
         {
             services.AddScoped<IOptionRepository, OptionRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IReportRepository, ReportRepository>();
         }
 
         public static void ConfigureApplicationService(this IServiceCollection services)

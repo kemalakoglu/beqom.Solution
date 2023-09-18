@@ -9,7 +9,7 @@ namespace beqom.Domain.Contract.Enum.OptionType
         Default,
 
         [OptionClass(typeof(NonEmptyOption))]
-        Config,
+        NonEmptyOption,
 
         [OptionClass(typeof(EmptyOption))]
         Empty,

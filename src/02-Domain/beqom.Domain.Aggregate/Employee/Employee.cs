@@ -1,22 +1,23 @@
 ﻿using beqom.Domain.Aggregate.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace beqom.Domain.Aggregate.Employee
 {
     public class Employee : BaseEntity
     {
-        public int Type { get; set; }
+        private string _surname;
+
+        public EmployeeType Type { get; set; }
         public int Years { get; set; }
         public decimal Salary { get; set; }
+        public string Surname { get { return _surname; } set { _surname = Mask(value); } }
 
-        public string MaskName()
+        public string Mask(string param)
         {
-            var firstChars = Name.Substring(0, 3);
-            var length = Name.Length - 3;
+            if (param.Length < 3)
+                return param;
+
+            var firstChars = param.Substring(0, 3);
+            var length = param.Length - 3;
 
             for (int i = 0; i < length; i++)
             {
@@ -25,5 +26,13 @@ namespace beqom.Domain.Aggregate.Employee
 
             return firstChars;
         }
+    }
+
+    public enum EmployeeType
+    {
+        Trainee,
+        Junior,
+        Senior,
+        Manager
     }
 }

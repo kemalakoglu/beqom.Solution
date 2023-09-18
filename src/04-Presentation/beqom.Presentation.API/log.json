@@ -1189,3 +1189,87 @@
 {"Timestamp":"2023-09-16T14:22:48.5212786+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-16T14:22:59.4582155+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Option/Get","Properties":{"Application":"app"}}
 {"Timestamp":"2023-09-16T14:23:11.3126456+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:12:39.0523632+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:12:41.6538311+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:03.6663113+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:03.6935068+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:04.0500848+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:04.0606122+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:04.0630229+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:04.6056970+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:04.9677040+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:05.2405641+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:13:05.7061346+02:00","Level":"Error","MessageTemplate":"Conflicting method/path combination \"GET api/Option/GetOption/{optionType}\" for actions - beqom.Presentation.API.Controllers.OptionController.GetOption (beqom.Presentation.API),beqom.Presentation.API.Controllers.ReportController.GenerateReport (beqom.Presentation.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround","Properties":{"optionType":"Swashbuckle.AspNetCore.SwaggerGen","__1":"System.Collections.Generic.IDictionary`2[Microsoft.OpenApi.Models.OperationType,Microsoft.OpenApi.Models.OpenApiOperation] GenerateOperations(System.Collections.Generic.IEnumerable`1[Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription], Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository)","__2":"System.NotSupportedException: Conflicting method/path combination \"GET api/Option/GetOption/{optionType}\" for actions - beqom.Presentation.API.Controllers.OptionController.GetOption (beqom.Presentation.API),beqom.Presentation.API.Controllers.ReportController.GenerateReport (beqom.Presentation.API). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround\r\n   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)\r\n   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)\r\n   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)\r\n   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)\r\n   at beqom.Presentation.API.Extensions.ErrorHandlingMiddleware.Invoke(HttpContext context) in C:\\Career\\Interviews\\CodeChallanges\\beqom\\src\\04-Presentation\\beqom.Presentation.API\\Extensions\\ErrorHandlingMiddleware.cs:line 30","Application":"app"}}
+{"Timestamp":"2023-09-17T14:54:50.4158708+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:54:55.3526077+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:55:17.6351757+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/1","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:55:29.8293818+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:55:29.9516722+02:00","Level":"Information","MessageTemplate":"Service path is:/favicon.ico","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:55:48.3605622+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/2","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:55:56.0856807+02:00","Level":"Information","MessageTemplate":"Data Not Found","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:56:06.9330812+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/1","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:56:09.8328111+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:56:23.1151658+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/0","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:56:27.4401919+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T14:56:34.0301521+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/1","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:01:45.3933910+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:01:47.2521185+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:01:52.3498980+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/1","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:01:54.3198905+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:01:55.6139651+02:00","Level":"Information","MessageTemplate":"Service path is:/favicon.ico","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:02.8229751+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/0","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:04.9924003+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:16.2117289+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/2","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:18.7310061+02:00","Level":"Information","MessageTemplate":"Data Not Found","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:29.5290439+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/7","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:32.4886049+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:41.1260063+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/empty","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:45.8283794+02:00","Level":"Information","MessageTemplate":"Data Not Found","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:54.9303090+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/nonempty","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:02:56.6473613+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:08.1076289+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/nonempty","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:32.3350037+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:33.2447898+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/nonemptyoption","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:36.2437524+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:45.5168126+02:00","Level":"Information","MessageTemplate":"Service path is:/api/option/getoption/kemal","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-17T15:03:50.0785741+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:32.6646760+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:34.7233110+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:41.4070535+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:41.4515160+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:41.8492810+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:41.8644289+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:41.8751386+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:42.2149030+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:42.3746433+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:42.9403189+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:48.0328158+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Report/GetReportAsync","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:58:50.3423150+02:00","Level":"Error","MessageTemplate":"Error mapping types.\r\n\r\nMapping types:\r\nConcurrentBag`1 -> IEnumerable`1\r\nSystem.Collections.Concurrent.ConcurrentBag`1[[beqom.Domain.Aggregate.Employee.Report, beqom.Domain.Aggregate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[beqom.Domain.Contract.DTO.ReportResponseDto, beqom.Domain.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T15:59:53.2121450+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Report/GetReportAsync","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:00:11.7379916+02:00","Level":"Error","MessageTemplate":"Error mapping types.\r\n\r\nMapping types:\r\nConcurrentBag`1 -> IEnumerable`1\r\nSystem.Collections.Concurrent.ConcurrentBag`1[[beqom.Domain.Aggregate.Employee.Report, beqom.Domain.Aggregate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[beqom.Domain.Contract.DTO.ReportResponseDto, beqom.Domain.Contract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:06.1513578+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:08.6545447+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:13.9046445+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:13.9262724+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:14.3390583+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:14.3391203+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:14.3471088+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:14.9413868+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:15.1401164+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:15.5773038+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:20.5644455+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Report/GetReportAsync","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:22.1109323+02:00","Level":"Error","MessageTemplate":"Error constructing handler for request of type MediatR.IRequestHandler`2[beqom.Domain.Contract.DTO.ReportRequestDto,System.Collections.Generic.IEnumerable`1[beqom.Domain.Contract.DTO.ReportResponseDto]]. Register your handlers with the container. See the samples in GitHub for examples.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:53.9652638+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Report/GetReportAsync","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:02:54.6535551+02:00","Level":"Error","MessageTemplate":"Error constructing handler for request of type MediatR.IRequestHandler`2[beqom.Domain.Contract.DTO.ReportRequestDto,System.Collections.Generic.IEnumerable`1[beqom.Domain.Contract.DTO.ReportResponseDto]]. Register your handlers with the container. See the samples in GitHub for examples.","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:15.3091924+02:00","Level":"Information","MessageTemplate":"WebApi Starting...","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:16.8886023+02:00","Level":"Information","MessageTemplate":"Service path is:/api/","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:33.3082683+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:33.3291101+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/index.html","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:33.6604422+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui.css","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:33.6618259+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:33.6740642+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:34.0773899+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-bundle.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:34.2244396+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/swagger-ui-standalone-preset.js.map","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:34.6404029+02:00","Level":"Information","MessageTemplate":"Service path is:/swagger/beqom/swagger.json","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:39.3439470+02:00","Level":"Information","MessageTemplate":"Service path is:/api/Report/GetReportAsync","Properties":{"Application":"app"}}
+{"Timestamp":"2023-09-18T16:08:48.4587445+02:00","Level":"Information","MessageTemplate":"Operation Succeeded","Properties":{"Application":"app"}}

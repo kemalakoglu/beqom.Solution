@@ -1,17 +1,19 @@
-﻿using beqom.Domain.Contract.DTO.Option;
+﻿using beqom.Domain.Contract.DTO;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace beqom.Application.CommandQuery
 {
     public partial class ApplicationService
     {
-        #region Option Aggregate
+        #region Report Aggregate
+
         /// <summary>
-        /// GetOptionAsync
+        /// GetReportsAsync
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public async Task<OptionResponseDto> GetOptionAsync(OptionRequestDto request)
+        public async Task<IEnumerable<ReportResponseDto>> GetReportsAsync(ReportRequestDto request)
         {
             return await this.mediator.Send(request);
         }

@@ -1,11 +1,9 @@
 using beqom.Domain.Aggregate;
 using beqom.Domain.Aggregate.Option;
-using beqom.Domain.Contract.Interface;
-using beqom.Domain.Repository;
 using System;
 using Xunit;
 
-namespace beqom.Test.Presentation
+namespace beqom.Test.Aggregate
 {
     public class OptionTest
     {
