@@ -163,7 +163,7 @@ All notable changes to this project will be documented in this file.
 	-delete mode 100644 src/02-Domain/beqom.Domain.Aggregate/Option/Entities/EmptyOption.cs
 	-rename src/02-Domain/beqom.Domain.Aggregate/Option/{Entities => }/Option.cs (50%)
 	
-## [1.0.23] - 18-09-2023
+## [1.0.3] - 18-09-2023
 
 ### Added	
 	-create mode 100644 .dockerignore
